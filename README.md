@@ -11,13 +11,13 @@ What you will download is basically Silex (v1.1), but with two things more:
 ## What's this for?
 
 
-When developing a web project, sometimes you need to display a *"Site under maintenance"* or a *"Site under construction"* page. Most of the times you don't want to put such page into your project, but it has to be located elsewhere and be autonomous. The common case is to make Apache virtual host pointing to a temporary folder (in which you put *Operation Takedown* code) and then restore it.
+When developing a web project, sometimes you need to display a *"Site under maintenance"* or a *"Site under construction"* page. Most of the times you don't want to put such page into your project, but it has to be located elsewhere and be autonomous. The common case is to make Apache virtual host pointing to a temporary folder (in which you put *OperationTakedown* code) and then restore it.
 
-**Operation Takedown** is a micro website based on [Silex](http://silex.sensiolabs.org/) to do just this: deployed in a separate folder and used only in special cases, displays a temporary page with the right HTTP Status Code for your web project.
+**OperationTakedown** is a micro website based on [Silex](http://silex.sensiolabs.org/) to do just this: deployed in a separate folder and used only in special cases, displays a temporary page with the right HTTP Status Code for your web project.
 
 ## Why should I use?
 
-Here are some reasons to use **Operation Takedown** to display the *"Site under maintenance"* page:
+Here are some reasons to use **OperationTakedown** to display the *"Site under maintenance"* page:
 
 - **It's fast to deploy and customize**:
 
@@ -33,26 +33,38 @@ Here are some reasons to use **Operation Takedown** to display the *"Site under 
 
 - **503 (Service Unavailable) is returned for every request**:
 
-    You will want that that a crawler, for **every** url is trying to access to, gets a **503** instead of a **404**; so it's not sufficient to put only "/" under maintenance.
+    You will want that a crawler, for **every** url is trying to access to, gets a **503** instead of a **404**; so it's not sufficient to put only "/" under maintenance.
 
     You will also want, for the same reason, to provide users with a beautiful HTML page for every url requested.
 
 
 ## How to install
 
-1. Download the latest release of **Operation takedon** from [Releases page](https://github.com/inmarelibero/OperationTakedown/releases) and uncompress it.
+1. Download the latest release of **OperationTakedown** from [Releases page](https://github.com/inmarelibero/OperationTakedown/releases) and uncompress it.
 
 1. Enter the uncompressed folder with the console, and install the vendors by running:
 
     > php composer.phar install
 
-   Yes, **Operation takedown** comes with ``composer.phar``already shipped. If you want to be sure to use the latest version, download it from [getcomposer.org](http://getcomposer.org/) and replace the existing one, or just run:
+   Yes, **OperationTakedown** comes with ``composer.phar``already shipped. If you want to be sure to use the latest version, download it from [getcomposer.org](http://getcomposer.org/) and replace the existing one, or just run:
 
     > php composer.phar self-update
 
 1. Make sure your virtual host points to the ``/web`` folder. If you are using Apache, the ``.htaccess`` (inspired by the Symfony2's one) will do the rewrite to ``index.php``. Fell free to edit it to fit your needs.
 
 1. Ta-daaa! Finished.
+
+   Maybe you will want now to improve the design of your page, or customize some configurations. You could take a look at the [Cookbook](/doc/cookbook/index.md) now.
+
+## Configuration Reference
+
+Read the full configuration reference [here](/doc/configuration_reference.md).
+
+## Cookbook
+
+Some useful resources to customize your pages:
+
+- [Handle CSS and other assets](/doc/cookbook/handle_css_and_other_assets.md)
 
 ## Notes
 
