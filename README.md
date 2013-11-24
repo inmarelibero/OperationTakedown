@@ -53,3 +53,7 @@ Here are some reasons to use **Operation Takedown** to display the *"Site under 
 1. Make sure your virtual host points to the ``/web`` folder. If you are using Apache, the ``.htaccess`` (inspired by the Symfony2's one) will do the rewrite to ``index.php``. Fell free to edit it to fit your needs.
 
 1. Ta-daaa! Finished.
+
+## Notes
+
+Developing the first stable version took me no more than ~4 hours. This is incredible and it was made possible by people developing [Silex](http://silex.sensiolabs.org/), so thanks mainly to [@fabpot](https://github.com/fabpot) and [@igorw](https://github.com/igorw) (see [here](https://github.com/silexphp/Silex/graphs/contributors) all contributors).
