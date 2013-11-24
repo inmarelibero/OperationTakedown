@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+        <title>
+        	{%- spaceless %}
+        		{% block meta_title_content %}Site under maintenance{% endblock %}
+        	{% endspaceless -%}
+    	</title>
+        <meta name="description" content="
+        	{%- spaceless %}
+        		{% block meta_description_content %}desc{% endblock %}
+    		{% endspaceless -%}
+		" />
+        <meta name="keywords" content="
+        	{%- spaceless %}
+        		{% block meta_keywords_content %}{% endblock %}
+    		{% endspaceless -%}"
+		/>
+        <meta name="robots" content="
+        	{%- spaceless %}
+        		{% block meta_robots_content %}noindex,nofollow{% endblock %}
+    		{% endspaceless -%}"
+		/>
+        <meta name="googlebot" content="
+        	{%- spaceless %}
+        		{% block meta_googlebot_content %}noindex,nofollow{% endblock %}
+    		{% endspaceless -%}"
+		/>
+        <meta name="author" content="
+        	{%- spaceless %}
+        		{% block meta_author_content %}{% endblock %}
+    		{% endspaceless -%}"
+		/>
+        <meta name="language" content="
+        	{%- spaceless %}
+        		{% block meta_language_content %}{% endblock %}
+    		{% endspaceless -%}"
+		/>
+
+		<link rel="stylesheet" type="text/css" href="/css/frontend.css" />
+	</head>
+	<body>
+
+		{% block main "" %}
+
+	</body>
+
+</html>

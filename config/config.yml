@@ -1,0 +1,12 @@
+#######################################################################################
+#
+# Set the Retry-after HTTP header
+#
+# ref: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.37
+#
+#######################################################################################
+retry_after:
+    # set false to ignore sending this header
+    enabled: true
+    # how many seconds the crawler should wait to return on your website
+    seconds: 120

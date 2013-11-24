@@ -1,0 +1,26 @@
+/***********************************************************************************************
+ *
+ * frontend.css contains the css rules to style your maintenance page
+ *
+ **********************************************************************************************/
+
+/**
+ * EXAMPLE RULES!
+ *
+ * Remove and replace with yours
+ */
+body {
+	background: #363636;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	color: #CCCCCC;
+}
+body h1 {
+	margin-top: 180px
+}
+body h2 {
+	margin-top: 50px
+}
+/**
+ *	//END EXAMPLE RULES
+ */
