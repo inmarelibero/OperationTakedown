@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Request;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
@@ -38,17 +40,21 @@ $app['get_response_headers'] = $app->share(function () use ($app) {
 /**
  * Return a 503 HTTP Status Code for every request
  */
-$app->match('/{url}', function () use ($app) {
+$app->match('/{url}', function (Request $request) use ($app) {
 
-	return new Symfony\Component\HttpFoundation\Response(
-		$app['twig']->render('index.html.twig'),
-		503,
-		$app['get_response_headers']
-	);
+	// if request url ends with ".json", return a Json response
+	if (preg_match("#\.json$#", $request->getPathInfo())) {
+		return new Symfony\Component\HttpFoundation\JsonResponse(array(), 503, $app['get_response_headers']);
+	}
+
+	// if request url ends with ".xml", return a XML response
+	elseif (preg_match("#\.xml$#", $request->getPathInfo())) {
+		return new Symfony\Component\HttpFoundation\Response('<?xml version="1.0" encoding="UTF-8" ?><root></root>', 503, $app['get_response_headers']);
+	}
+
+	// default response content type: HTML
+	return new Symfony\Component\HttpFoundation\Response($app['twig']->render('index.html.twig'), 503, $app['get_response_headers']);
 
 })->assert('url', '.*');
 
 $app->run();
-
-
-
